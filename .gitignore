@@ -1,0 +1,44 @@
+# Секрети
+.env
+*.env
+
+# База даних (SQLite)
+db.sqlite3
+*.sqlite3
+*.sqlite3-journal
+
+# Python кеш
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Віртуальні середовища
+venv/
+env/
+.venv/
+
+# IDE/Editor файли
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Статика та медіа (генеруються автоматично)
+staticfiles/
+media/
+
+# Логи
+*.log
+
+# Пакети/бібліотеки
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Тести / coverage
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
