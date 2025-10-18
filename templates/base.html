@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PlatinumQuest{% endblock %}</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <!-- Навігація -->
+    <nav class="bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-yellow-500">PlatinumQuest</a>
+            <div class="flex items-center gap-4">
+                <a href="/" class="hover:text-yellow-400 transition">Головна</a>
+                <a href="{% url 'games:games_list'%}" class="hover:text-yellow-400 transition">Ігри</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент сторінки -->
+    <main class="container mx-auto px-4 py-8">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 PlatinumQuest. Всі права захищені.</p>
+            <p>Made with ❤️ by Денис Маштак</p>
+        </div>
+    </footer>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
