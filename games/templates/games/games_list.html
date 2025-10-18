@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Список ігор</h1>
+
+    <div class="row">
+        {% for game in games %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="{{ game.image.url }}" alt="{{ game.title }}"
+                        class="card-img-top w-48 h-32 object-cover rounded-lg shadow-md">
+                <div class="card-body">
+                    <h5 class="card-title">{{ game.title }}</h5>
+                    <p><strong>Жанр:</strong> {{ game.genre }}</p>
+                    <p><strong>Платформи:</strong>
+                    {% for platform in game.platform.all %}
+                        {{ platform.get_name_display }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                    </p>
+                    <p><strong>Рейтинг:</strong> ⭐ {{ game.rating }}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Ігор ще немає 😔</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
